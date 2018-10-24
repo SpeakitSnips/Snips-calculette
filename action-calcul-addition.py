@@ -43,7 +43,7 @@ def action_wrapper(hermes, intentMessage, conf):
     calc = first + second
     if str(calc)[-2:] == ".0":
         calc = int(calc)
-    result_sentence = "L'addition de {} et de {} égale {} .".format(first, second, calc)
+    result_sentence = unicode("L'addition de {} et de {} égale {} .".format(first, second, calc), 'utf-8')
 
     current_session_id = intentMessage.session_id
     hermes.publish_end_session(current_session_id, result_sentence)
